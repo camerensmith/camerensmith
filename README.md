@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @camerensmith
-- 👀 I’m interested in expanding my knowledge of software development, VB and SQL.
+- 👀 I’m interested in expanding my knowledge.
 - 🌱 I’m currently learning agile development.
 - 💞️ I’m looking to collaborate on any/all projects
 - 📫 How to reach me - here!
