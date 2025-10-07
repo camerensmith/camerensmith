@@ -142,20 +142,20 @@ body {
 .button:focus { outline: 3px solid var(--focus); outline-offset: 3px; }
 
 /* Icon buttons */
-.icon-button {
+.card .icon-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   padding: 0;
   border-radius: 6px;
   background: var(--card);
   border: 1px solid var(--border);
   color: var(--text);
 }
-.icon-button:hover { background: rgba(124, 58, 237, 0.12); border-color: var(--primary); }
-.icon { width: 16px; height: 16px; fill: currentColor; }
+.card .icon-button:hover { background: rgba(124, 58, 237, 0.12); border-color: var(--primary); }
+.card .icon { width: 14px; height: 14px; fill: currentColor; }
 .icon-row { display: inline-flex; gap: .25rem; align-items: center; }
 
 .site-footer { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; border-top: 1px solid var(--border); color: var(--muted); }
