@@ -146,17 +146,17 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   padding: 0;
-  border-radius: 10px;
+  border-radius: 6px;
   background: var(--card);
   border: 1px solid var(--border);
   color: var(--text);
 }
 .icon-button:hover { background: rgba(124, 58, 237, 0.12); border-color: var(--primary); }
-.icon { width: 20px; height: 20px; fill: currentColor; }
-.icon-row { display: flex; gap: .5rem; }
+.icon { width: 16px; height: 16px; fill: currentColor; }
+.icon-row { display: inline-flex; gap: .25rem; align-items: center; }
 
 .site-footer { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; border-top: 1px solid var(--border); color: var(--muted); }
 
