@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const toggle = document.getElementById('themeToggle');
   const search = document.getElementById('siteSearch');
+  const searchSubmit = document.getElementById('siteSearchSubmit');
   const sidebarToggle = document.getElementById('sidebarToggle');
   const sidebar = document.getElementById('sidebar');
   const stored = localStorage.getItem('theme');
@@ -26,20 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Simple client-side filter announce for screen readers
+  function runSearch() {
+    const status = document.getElementById('searchStatus');
+    const q = (search?.value || '').trim().toLowerCase();
+    const cards = Array.from(document.querySelectorAll('.card'));
+    let visible = 0;
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const match = text.includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    if (status) status.textContent = q ? `${visible} result${visible === 1 ? '' : 's'} for “${q}”.` : '';
+  }
+
   if (search) {
     const status = document.getElementById('searchStatus');
-    search.addEventListener('input', () => {
-      const q = search.value.trim().toLowerCase();
-      const cards = Array.from(document.querySelectorAll('.card'));
-      let visible = 0;
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        const match = text.includes(q);
-        card.style.display = match ? '' : 'none';
-        if (match) visible++;
-      });
-      if (status) status.textContent = q ? `${visible} result${visible === 1 ? '' : 's'} for “${q}”.` : '';
-    });
+    search.addEventListener('input', runSearch);
+    if (searchSubmit) {
+      searchSubmit.addEventListener('click', (e) => { e.preventDefault(); runSearch(); });
+    }
   }
 
   // Sidebar toggle with persistence
