@@ -2,11 +2,11 @@
   --bg: #0b0c10;
   --text: #e5e7eb;
   --muted: #9aa0a6;
-  --primary: #7c3aed;
+  --primary: #420f99;
   --card: #111217;
   --border: #1f2330;
-  --focus: #22c55e; /* green focus for strong contrast */
-  --topbar: #0b0c10; /* dark mode top bar */
+  --focus: #22c55e; 
+  --topbar: #0b0c10; 
   --topbar-border: #1f2330;
 }
 
@@ -20,7 +20,7 @@ body {
   line-height: 1.6;
 }
 
-/* Skip link for keyboard users */
+
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -121,7 +121,7 @@ body {
 
 .section { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; border-top: 1px solid var(--border); }
 
-/* Center resume card content */
+
 #resume .card { align-items: center; text-align: center; }
 
 .card-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
@@ -141,7 +141,7 @@ body {
 .button:hover { filter: brightness(1.1); }
 .button:focus { outline: 3px solid var(--focus); outline-offset: 3px; }
 
-/* Icon buttons */
+
 .card .icon-button {
   display: inline-flex;
   align-items: center;
@@ -160,7 +160,7 @@ body {
 
 .site-footer { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; border-top: 1px solid var(--border); color: var(--muted); }
 
-/* Tables */
+
 .table-responsive { overflow-x: auto; }
 .table {
   width: 100%;
@@ -189,7 +189,7 @@ body {
   --topbar-border: #e5e7eb;
 }
 
-/* Respect user preference by default */
+
 @media (prefers-color-scheme: light) {
   :root:not(.light) { /* if no explicit theme, allow OS to be light */ }
 }
@@ -198,7 +198,7 @@ body {
   * { animation: none !important; transition: none !important; }
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 960px) {
   .app { grid-template-columns: 1fr; }
   .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); display: none; }
