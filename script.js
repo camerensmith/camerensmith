@@ -66,48 +66,95 @@ document.addEventListener('DOMContentLoaded', () => {
   // Load certifications from local JSON and render table rows
   const certsBody = document.getElementById('certsBody');
   if (certsBody) {
-    function renderCerts(certs) {
-      if (!Array.isArray(certs)) return;
+    let certsData = [];
+    let currentSort = { key: 'issued', dir: 'desc' };
+
+    function normalizeIssued(value) {
+      // Expect formats like "Jul 2024"; fallback to Date parse
+      if (!value) return 0;
+      const d = Date.parse(value);
+      return isNaN(d) ? 0 : d;
+    }
+
+    function renderCerts(data) {
+      if (!Array.isArray(data)) return;
       const fragment = document.createDocumentFragment();
-      certs.forEach(cert => {
+      data.forEach(cert => {
         const tr = document.createElement('tr');
         const tdName = document.createElement('td');
         tdName.textContent = cert.name || '';
         const tdIssuer = document.createElement('td');
         tdIssuer.textContent = cert.issuer || '';
         const tdIssued = document.createElement('td');
-        tdIssued.textContent = [cert.issued, cert.expires ? ` · Expires ${cert.expires}` : ''].filter(Boolean).join('');
-        const tdLink = document.createElement('td');
+        tdIssued.textContent = cert.issued || '';
+        const tdCred = document.createElement('td');
         if (cert.url) {
           const a = document.createElement('a');
           a.href = cert.url;
           a.target = '_blank';
           a.rel = 'noreferrer noopener';
-          a.textContent = cert.credentialId ? `View (${cert.credentialId})` : 'View';
-          tdLink.appendChild(a);
+          a.textContent = cert.credentialId ? cert.credentialId : 'View';
+          tdCred.appendChild(a);
         } else {
-          tdLink.textContent = cert.credentialId || '—';
+          tdCred.textContent = cert.credentialId || '—';
         }
         tr.appendChild(tdName);
         tr.appendChild(tdIssuer);
         tr.appendChild(tdIssued);
-        tr.appendChild(tdLink);
+        tr.appendChild(tdCred);
         fragment.appendChild(tr);
       });
       certsBody.innerHTML = '';
       certsBody.appendChild(fragment);
     }
 
+    function sortAndRender(key) {
+      const dir = (currentSort.key === key && currentSort.dir === 'asc') ? 'desc' : 'asc';
+      currentSort = { key, dir };
+      const sorted = [...certsData].sort((a, b) => {
+        let va = a[key] ?? '';
+        let vb = b[key] ?? '';
+        if (key === 'issued') {
+          va = normalizeIssued(va);
+          vb = normalizeIssued(vb);
+        }
+        if (typeof va === 'string' && typeof vb === 'string') {
+          va = va.toLowerCase();
+          vb = vb.toLowerCase();
+        }
+        if (va < vb) return dir === 'asc' ? -1 : 1;
+        if (va > vb) return dir === 'asc' ? 1 : -1;
+        return 0;
+      });
+      // Update aria-sort on headers
+      document.querySelectorAll('th[data-sort]').forEach(th => {
+        th.setAttribute('aria-sort', th.getAttribute('data-sort') === key ? dir === 'asc' ? 'ascending' : 'descending' : 'none');
+      });
+      renderCerts(sorted);
+    }
+
+    function attachSortHandlers() {
+      document.querySelectorAll('th[data-sort]').forEach(th => {
+        th.addEventListener('click', () => sortAndRender(th.getAttribute('data-sort')));
+        th.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); sortAndRender(th.getAttribute('data-sort')); }
+        });
+      });
+    }
+
+    function initCerts(data) {
+      certsData = Array.isArray(data) ? data : [];
+      attachSortHandlers();
+      sortAndRender(currentSort.key);
+    }
+
     fetch('certs.json', { cache: 'no-store' })
       .then(r => r.ok ? r.json() : Promise.reject())
-      .then(renderCerts)
+      .then(initCerts)
       .catch(() => {
         const inline = document.getElementById('certs-data');
         if (inline && inline.textContent) {
-          try {
-            const data = JSON.parse(inline.textContent);
-            renderCerts(data);
-          } catch {}
+          try { initCerts(JSON.parse(inline.textContent)); } catch {}
         }
       });
   }

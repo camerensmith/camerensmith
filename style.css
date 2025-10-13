@@ -178,6 +178,10 @@ body {
 .table tr:last-child td { border-bottom: 0; }
 .muted { color: var(--muted); }
 
+/* Sortable table styles */
+.table thead th[role="button"] { cursor: pointer; user-select: none; }
+.table thead th .sort-indicator { margin-left: .35rem; opacity: .7; }
+
 .light {
   --bg: #ffffff;
   --text: #111827;
