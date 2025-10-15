@@ -127,6 +127,7 @@ body {
 .card-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; gap: .5rem; }
 .card .button:last-of-type { margin-top: auto; }
+.card split-button { display:block; margin-top:auto; }
 
 .button {
   display: inline-block;
