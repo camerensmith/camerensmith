@@ -1,10 +1,16 @@
 [
   {
+    "name": "AI for Product Management",
+    "issuer": "Pendo.io",
+    "issued": "Oct 2025",
+    "url": "https://www.credly.com/badges/77a2330c-3c79-44f6-ab49-86eb06c99b3b/public_url"
+  },
+  {
     "name": "Professional Scrum with User Experience",
     "issuer": "Scrum.org",
     "issued": "Jun 2023",
     "credentialId": "976152",
-    "url": "https://www.linkedin.com/in/cam-e-smith/details/certifications/"
+    "url": "https://www.credly.com/badges/ce6b9e3d-f929-4750-8510-3fc903e001fa/public_url"
   },
   {
     "name": "Professional Scrum Product Owner (PSPO)",
@@ -16,14 +22,14 @@
     "name": "Professional Scrum Product Owner II",
     "issuer": "Scrum.org",
     "issued": "Jul 2024",
-    "url": "https://www.linkedin.com/in/cam-e-smith/details/certifications/"
+    "url": "https://www.credly.com/badges/faa9e373-99e9-44b6-a71d-56dee72b8d1a/public_url"
   },
   {
     "name": "Professional Scrum Master (PSM 1)",
     "issuer": "Scrum.org",
     "issued": "Jul 2022",
     "credentialId": "834281",
-    "url": "https://www.linkedin.com/in/cam-e-smith/details/certifications/"
+    "url": "https://www.credly.com/badges/4ce4cf6f-d17f-4c0e-a320-d98b45c89727/public_url"
   },
   {
     "name": "ICAgile Agile Team Facilitator",
@@ -44,7 +50,7 @@
     "issuer": "Atlassian",
     "issued": "Oct 2021",
     "credentialId": "185401698",
-    "url": "https://www.linkedin.com/in/cam-e-smith/details/certifications/"
+    "url": "https://drive.google.com/file/d/1V3Ds90b-_x-LspEHsHC9HmWwZvaE6a4h/view"
   },
   {
     "name": "Advanced Google Analytics",
