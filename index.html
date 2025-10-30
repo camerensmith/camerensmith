@@ -19,16 +19,18 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header topbar" role="banner">
         <div class="topbar-inner">
-            <div class="brand">
-                <h1>Hi, I'm Cameren </h1>
-                <p>Project Management • Projects • Hobbies</p>
+            <div class="brand-left">
+                <a href="#" class="home-link" aria-label="Home">
+                    <img src="assets/home.png" alt="Home" class="home-icon" />
+                </a>
+                <span class="brand-title">Cam Smith's Portfolio</span>
             </div>
+            <form role="search" class="search" aria-label="Site search" onsubmit="return false">
+                <label for="siteSearch" class="visually-hidden">Search</label>
+                <input id="siteSearch" name="q" type="search" placeholder="Search" aria-describedby="searchStatus" />
+                <button id="siteSearchSubmit" type="submit" class="button" aria-label="Run search">⏎</button>
+            </form>
             <div class="utilities">
-                <form role="search" class="search" aria-label="Site search" onsubmit="return false">
-                    <label for="siteSearch" class="visually-hidden">Search</label>
-                    <input id="siteSearch" name="q" type="search" placeholder="Search" aria-describedby="searchStatus" />
-                    <button id="siteSearchSubmit" type="submit" class="button" aria-label="Run search">⏎</button>
-                </form>
                 <button id="themeToggle" class="button" type="button" aria-pressed="false" aria-label="Toggle color theme">Theme</button>
             </div>
         </div>
@@ -52,7 +54,7 @@
         </aside>
         <main id="main">
         <section id="hero" class="hero">
-            <h2>Welcome</h2>
+            <h2>Hi, I'm Cameren</h2>
             <p>This is essentially a quick info-dump about me and my professional experience. Projects, things I've worked on, etc. It's useful for a portfolio review, or quick reference.</p>
         </section>
 

@@ -8,9 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebarToggle = document.getElementById('sidebarToggle');
   const sidebar = document.getElementById('sidebar');
   const stored = localStorage.getItem('theme');
-  if (stored === 'light' || !stored) {
+  if (stored === 'light') {
     document.documentElement.classList.add('light');
-    if (!stored) localStorage.setItem('theme', 'light');
+  } else if (stored === 'dark') {
+    document.documentElement.classList.remove('light');
   }
 
   if (toggle) {
@@ -27,6 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Simple client-side filter announce for screen readers
+  // Blur home link on mouse click to avoid persistent focus ring
+  const homeLink = document.querySelector('.home-link');
+  if (homeLink) {
+    homeLink.addEventListener('click', (e) => {
+      // e.detail > 0 indicates a pointer (mouse/touch) activation
+      if (e && e.detail > 0) {
+        requestAnimationFrame(() => homeLink.blur());
+      }
+    });
+  }
+
   function runSearch() {
     const status = document.getElementById('searchStatus');
     const q = (search?.value || '').trim().toLowerCase();

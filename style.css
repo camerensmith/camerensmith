@@ -10,14 +10,16 @@
   --popover-foreground: 213 31% 91%;
   --border-h: 215 27% 16%;
   --input: 215 27% 16%;
-  --primary-h: 262 83% 58%;
-  --primary-foreground: 210 20% 98%;
+  /* Dark theme: accessible primary */
+  --primary-h: 0 6% 60%; /* #9E9494 */
+  --primary-foreground: 224 71% 4%; /* near-black for contrast on light primary */
   --secondary: 215 27% 16%;
   --secondary-foreground: 210 40% 98%;
   --accent: 217 19% 27%;
   --accent-foreground: 210 40% 98%;
-  --ring: 142 71% 45%;
+  --ring: 0 3% 25%; /* #433F3F */
   --radius: 0.5rem;
+  --topbar-height: 56px;
 
   /* map existing variables to shadcn tokens */
   --bg: hsl(var(--background));
@@ -67,21 +69,28 @@ body {
 
 /* App shell layout */
 .topbar {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 50;
+  left: 0;
+  right: 0;
+  z-index: 100;
   background: var(--topbar);
   border-bottom: 1px solid var(--topbar-border);
 }
 .topbar, .topbar a { color: var(--text); }
 .topbar .topbar-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  max-width: none;
+  margin: 0;
+  padding: .75rem 1rem;
 }
+.topbar .brand-left { display: inline-flex; align-items: center; gap: .5rem; }
+.topbar .home-link { display: inline-flex; align-items: center; justify-content: center; }
+.topbar .home-icon { width: 24px; height: 24px; border-radius: 6px; }
+.topbar .brand-title { font-weight: 600; color: var(--text); font-size: .95rem; }
+.topbar .search { justify-self: center; }
 .topbar .brand h1 { margin: 0; font-size: 1.25rem; }
 .topbar .brand p { margin: .25rem 0 0 0; color: var(--muted); font-size: .9rem; }
 .topbar .utilities { display: flex; align-items: center; gap: .5rem; }
@@ -112,13 +121,14 @@ body {
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 0;
+  padding-top: var(--topbar-height);
 }
 .sidebar {
   border-right: 1px solid var(--border);
   padding: 1rem;
   position: sticky;
-  top: 64px; /* below topbar */
-  height: calc(100vh - 64px);
+  top: var(--topbar-height); /* below topbar */
+  height: calc(100vh - var(--topbar-height));
 }
 .sidebar ul { list-style: none; padding: 0; margin: 0; }
 .sidebar a { color: var(--text); text-decoration: none; display: block; padding: .4rem 0; }
@@ -129,12 +139,14 @@ body {
 .site-nav a { color: var(--text); text-decoration: none; margin-right: 1rem; }
 .site-nav a:hover { color: var(--primary); }
 
-/* Focus styles to meet WCAG AA */
-:where(a, button, input, select, textarea):focus {
+/* Focus styles to meet WCAG AA; only show on keyboard navigation */
+::where(a, button, input, select, textarea):focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
-:where(a, button):focus-visible { outline: 3px solid var(--focus); }
+/* Remove generic :focus so mouse clicks don't persist outline */
+::where(a, button, input, select, textarea):focus { outline: none; }
+::where(a, button):focus { outline: none; }
 
 .hero {
   max-width: 960px;
@@ -223,13 +235,13 @@ body {
   --popover-foreground: 222 47% 11%;
   --border-h: 214 32% 91%;
   --input: 214 32% 91%;
-  --primary-h: 239 84% 67%;
+  --primary-h: 0 6% 25%;
   --primary-foreground: 210 40% 98%;
   --secondary: 210 40% 96.1%;
   --secondary-foreground: 222 47% 11%;
   --accent: 210 40% 96.1%;
   --accent-foreground: 222 47% 11%;
-  --ring: 239 84% 67%;
+  --ring: 0 3% 25%; /* #433F3F */
 
   /* mapped legacy vars */
   --bg: hsl(var(--background));
