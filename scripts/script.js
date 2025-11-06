@@ -177,6 +177,41 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.textContent = isLight ? '☀️' : '🌙';
     toggle.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
   }
+
+  // Scrollspy: highlight sidebar link for visible section
+  const sectionIds = ['projects','design','resume','certifications','salesforce','about','contact'];
+  const sections = sectionIds
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+  const sidebarLinks = Array.from(document.querySelectorAll('#sidebar a[href^="#"]'));
+  if (sections.length && sidebarLinks.length) {
+    const topbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--topbar-height')) || 56;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        if (entry.isIntersecting) {
+          sidebarLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+          history.replaceState(null, '', `#${id}`);
+        }
+      });
+    }, { root: null, rootMargin: `-${topbarHeight + 8}px 0px -60% 0px`, threshold: 0.2 });
+
+    sections.forEach(sec => observer.observe(sec));
+
+    // Initialize based on current hash
+    const initHash = location.hash.replace('#','');
+    if (initHash) {
+      sidebarLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${initHash}`));
+    }
+
+    // Improve click behavior: set active immediately
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  }
 });
 
 

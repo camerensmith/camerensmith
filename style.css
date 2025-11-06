@@ -133,6 +133,7 @@ body {
 .sidebar ul { list-style: none; padding: 0; margin: 0; }
 .sidebar a { color: var(--text); text-decoration: none; display: block; padding: .4rem 0; }
 .sidebar a:hover { color: var(--primary); }
+.sidebar a.active { color: var(--primary); font-weight: 600; }
 
 .site-header h1 { margin: 0 0 .25rem 0; font-size: 2rem; }
 .site-header p { margin: 0 0 1rem 0; color: var(--muted); }
