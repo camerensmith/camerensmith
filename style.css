@@ -229,6 +229,58 @@ body {
 .table thead th[role="button"] { cursor: pointer; user-select: none; }
 .table thead th .sort-indicator { margin-left: .35rem; opacity: .7; }
 
+/* Collapsible details/summary styles */
+details {
+  margin-top: 0;
+}
+details summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details summary::marker {
+  display: none;
+}
+details summary::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: .5rem;
+  transition: transform 0.2s;
+  color: var(--muted);
+}
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+details summary h3 {
+  display: inline;
+  margin: 0;
+}
+details summary:hover {
+  color: var(--primary);
+}
+details summary:hover::before {
+  color: var(--primary);
+}
+
+/* Case Studies section */
+.case-study-item {
+  margin-bottom: 2rem;
+}
+.case-study-item:last-child {
+  margin-bottom: 0;
+}
+.case-study-item h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+.case-study-item > p {
+  margin: 0 0 1rem 0;
+}
+
 .light {
   /* shadcn light tokens */
   --background: 0 0% 100%;

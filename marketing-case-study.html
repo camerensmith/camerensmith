@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Site Case Study - Cameren Smith</title>
+    <meta name="description" content="Marketing Site Case Study (UI/UX) - Cameren Smith">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
+    <link rel="shortcut icon" href="assets/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png">
+    <meta property="og:title" content="Marketing Site Case Study - Cameren Smith">
+    <meta property="og:description" content="Marketing Site Case Study (UI/UX)">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/og-image.png">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header topbar" role="banner">
+        <div class="topbar-inner">
+            <div class="brand-left">
+                <a href="index.html" class="home-link" aria-label="Home">
+                    <img src="assets/home.png" alt="Home" class="home-icon" />
+                </a>
+                <span class="brand-title">Cam Smith's Portfolio</span>
+            </div>
+            <form role="search" class="search" aria-label="Site search" onsubmit="return false">
+                <label for="siteSearch" class="visually-hidden">Search</label>
+                <input id="siteSearch" name="q" type="search" placeholder="Search" aria-describedby="searchStatus" />
+                <button id="siteSearchSubmit" type="submit" class="button" aria-label="Run search">⏎</button>
+            </form>
+            <div class="utilities">
+                <button id="themeToggle" class="button" type="button" aria-pressed="false" aria-label="Toggle color theme">Theme</button>
+            </div>
+        </div>
+        <div id="searchStatus" class="visually-hidden" aria-live="polite"></div>
+        
+        </header>
+
+    <div class="app">
+        <aside id="sidebar" class="sidebar" aria-label="Section navigation">
+            <nav>
+                <ul>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#design">Design</a></li>
+                    <li><a href="index.html#case-studies">Case Studies</a></li>
+                    <li><a href="index.html#certifications">Certifications</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="main">
+        <div style="max-width: 960px; margin: 0 auto; padding: 2rem 1rem 0;">
+            <a href="index.html#case-studies" class="button" style="margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <span>←</span> Back to Case Studies
+            </a>
+        </div>
+        <section id="marketing-case-study" class="section">
+            <h3>Marketing Site Case Study (UI/UX)</h3>
+            
+            <div class="card">
+                <h4>Project Overview</h4>
+                <p>Poor accessibility and navigability antipatterns. The mission was to rectify branding, calls to action, and create the foundations of a unified color palette.</p>
+
+                <h5>Key Deliverables:</h5>
+                <ol>
+                    <li>Unified design system</li>
+                    <li>Integration of customer research</li>
+                    <li>Analysis of user behaviors through GA4, LookerStudio, and Crazyegg.</li>
+                </ol>
+                <p><a class="button" href="docs/Case%20Study.pdf" target="_blank" rel="noreferrer noopener">View Complete Case Study (PDF)</a></p>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Cameren Smith</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
+
