@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Scrollspy: highlight sidebar link for visible section
-  const sectionIds = ['projects','design','case-studies','certifications','about','contact'];
+  const sectionIds = ['projects','design','case-studies','involvement','certifications','about','contact'];
   const sections = sectionIds
     .map(id => document.getElementById(id))
     .filter(Boolean);
@@ -233,8 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
         :host{ display:block; width:100%; }
         .group{ display:flex; position:relative; width:100%; }
         button, a.button { font: inherit; }
-        .btn{ background: var(--primary, #4f46e5); color:#fff; border:none; padding:.5rem .9rem; cursor:pointer; border-radius:8px 0 0 8px; flex:1; text-align:center; }
-        .toggle{ background: var(--primary, #4f46e5); color:#fff; border:none; padding:.5rem .5rem; width:42px; cursor:pointer; border-radius:0 8px 8px 0; border-left: 1px solid rgba(255,255,255,.2); }
+        .btn{ background: var(--primary, #4f46e5); color: hsl(var(--primary-foreground)); border:none; padding:.5rem .9rem; cursor:pointer; border-radius:8px 0 0 8px; flex:1; text-align:center; }
+        .toggle{ background: var(--primary, #4f46e5); color: hsl(var(--primary-foreground)); border:none; padding:.5rem .5rem; width:42px; cursor:pointer; border-radius:0 8px 8px 0; border-left: 1px solid rgba(255,255,255,.2); }
         .btn:focus, .toggle:focus { outline: 3px solid var(--focus, #22c55e); outline-offset: 3px; }
         .menu{ position:absolute; top:100%; right:0; background: var(--card, #111217); color: var(--text, #e5e7eb); border:1px solid var(--border, #1f2330); border-radius:8px; padding:.25rem; margin-top:.25rem; min-width: 160px; display:none; z-index:1000; }
         .menu[open]{ display:block; }
