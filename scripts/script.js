@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Scrollspy: highlight sidebar link for visible section
-  const sectionIds = ['projects','design','case-studies','involvement','certifications','about','contact'];
+  const sectionIds = ['projects','design','case-studies','involvement','certifications','resume','about','contact'];
   const sections = sectionIds
     .map(id => document.getElementById(id))
     .filter(Boolean);
