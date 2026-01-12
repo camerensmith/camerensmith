@@ -1,22 +1,21 @@
 :root {
-  /* shadcn-style color tokens (HSL components) */
-  --background: 224 71% 4%;
-  --foreground: 213 31% 91%;
-  --card-h: 224 71% 4%;
-  --card-foreground: 213 31% 91%;
-  --muted: 215 16% 47%;
-  --muted-foreground: 217 14% 65%;
-  --popover: 224 71% 4%;
-  --popover-foreground: 213 31% 91%;
-  --border-h: 215 27% 16%;
-  --input: 215 27% 16%;
-  /* Dark theme: accessible primary */
-  --primary-h: 0 6% 60%; /* #9E9494 */
-  --primary-foreground: 224 71% 4%; /* near-black for contrast on light primary */
-  --secondary: 215 27% 16%;
-  --secondary-foreground: 210 40% 98%;
-  --accent: 217 19% 27%;
-  --accent-foreground: 210 40% 98%;
+  /* shadcn light tokens (default) */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --card-h: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215 16% 47%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --border-h: 214 32% 91%;
+  --input: 214 32% 91%;
+  --primary-h: 0 6% 25%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222 47% 11%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222 47% 11%;
   --ring: 0 3% 25%; /* #433F3F */
   --radius: 0.5rem;
   --topbar-height: 56px;
@@ -281,24 +280,25 @@ details summary:hover::before {
   margin: 0 0 1rem 0;
 }
 
-.light {
-  /* shadcn light tokens */
-  --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
-  --card-h: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215 16% 47%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
-  --border-h: 214 32% 91%;
-  --input: 214 32% 91%;
-  --primary-h: 0 6% 25%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222 47% 11%;
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222 47% 11%;
+.dark {
+  /* shadcn-style color tokens (HSL components) - Dark theme */
+  --background: 224 71% 4%;
+  --foreground: 213 31% 91%;
+  --card-h: 224 71% 4%;
+  --card-foreground: 213 31% 91%;
+  --muted: 215 16% 47%;
+  --muted-foreground: 217 14% 65%;
+  --popover: 224 71% 4%;
+  --popover-foreground: 213 31% 91%;
+  --border-h: 215 27% 16%;
+  --input: 215 27% 16%;
+  /* Dark theme: accessible primary */
+  --primary-h: 0 6% 60%; /* #9E9494 */
+  --primary-foreground: 224 71% 4%; /* near-black for contrast on light primary */
+  --secondary: 215 27% 16%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 217 19% 27%;
+  --accent-foreground: 210 40% 98%;
   --ring: 0 3% 25%; /* #433F3F */
 
   /* mapped legacy vars */

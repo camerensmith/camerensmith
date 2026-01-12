@@ -8,23 +8,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebarToggle = document.getElementById('sidebarToggle');
   const sidebar = document.getElementById('sidebar');
   const stored = localStorage.getItem('theme');
-  if (stored === 'light') {
-    document.documentElement.classList.add('light');
-  } else if (stored === 'dark') {
-    document.documentElement.classList.remove('light');
+  if (stored === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    // Default to light mode if no preference is stored or if 'light' is stored
+    document.documentElement.classList.remove('dark');
   }
 
   if (toggle) {
     toggle.addEventListener('click', () => {
-      const isLight = document.documentElement.classList.toggle('light');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-      toggle.setAttribute('aria-pressed', String(isLight));
-      updateThemeIcon(isLight);
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggle.setAttribute('aria-pressed', String(!isDark));
+      updateThemeIcon(!isDark);
     });
     // Initialize pressed state
-    const initialIsLight = document.documentElement.classList.contains('light');
-    toggle.setAttribute('aria-pressed', String(initialIsLight));
-    updateThemeIcon(initialIsLight);
+    const initialIsDark = document.documentElement.classList.contains('dark');
+    toggle.setAttribute('aria-pressed', String(!initialIsDark));
+    updateThemeIcon(!initialIsDark);
   }
 
   // Simple client-side filter announce for screen readers
