@@ -327,7 +327,20 @@ details summary:hover::before {
   .app { grid-template-columns: 1fr; }
   .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); display: none; }
   .sidebar.open { display: block; }
-  .search input { min-width: 160px; }
+  
+  /* Mobile topbar adjustments */
+  .topbar .brand-title { display: none; }
+  .topbar .search { display: none; }
+  .button#themeToggle {
+    position: static;
+    margin: 0;
+    padding: .5rem .75rem;
+    box-shadow: none;
+  }
+  .topbar .topbar-inner {
+    grid-template-columns: auto 1fr;
+    padding: .5rem 1rem;
+  }
 }
 
 
