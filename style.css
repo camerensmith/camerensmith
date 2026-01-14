@@ -331,14 +331,28 @@ details summary:hover::before {
   /* Mobile topbar adjustments */
   .topbar .brand-title { display: none; }
   .topbar .search { display: none; }
+  .topbar .utilities { display: none; }
+  
+  /* FAB theme toggle on mobile */
   .button#themeToggle {
-    position: static;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    padding: 0;
     margin: 0;
-    padding: .5rem .75rem;
-    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-size: 1.5rem;
   }
+  
   .topbar .topbar-inner {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
     padding: .5rem 1rem;
   }
 }
