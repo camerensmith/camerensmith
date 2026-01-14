@@ -343,7 +343,7 @@ details summary:hover::before {
   .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); display: none; }
   .sidebar.open { display: block; }
   .search input { min-width: 160px; }
-  .about-content { flex-direction: column; align-items: center; text-align: center; }
+  .about-content { flex-direction: column; align-items: center; }
 }
 
 
