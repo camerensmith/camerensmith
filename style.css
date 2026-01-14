@@ -280,6 +280,21 @@ details summary:hover::before {
   margin: 0 0 1rem 0;
 }
 
+/* About section with headshot */
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.headshot {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--border);
+}
+
 .dark {
   /* shadcn-style color tokens (HSL components) - Dark theme */
   --background: 224 71% 4%;
@@ -328,6 +343,7 @@ details summary:hover::before {
   .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); display: none; }
   .sidebar.open { display: block; }
   .search input { min-width: 160px; }
+  .about-content { flex-direction: column; align-items: center; text-align: center; }
 }
 
 
