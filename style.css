@@ -215,6 +215,7 @@ body {
 }
 
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; gap: .5rem; justify-content: center; }
+#design .card { justify-content: flex-end; padding-bottom: 1.25rem; }
 .owtacticards-card .flip-card-front {
   background-image: url('assets/ow.png');
 }
