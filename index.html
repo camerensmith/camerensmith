@@ -64,97 +64,149 @@
             <h3>Projects</h3>
             <p>Fun projects I work on in my free time. Helps me learn new things and stay current on webtech.</p>
             <ul class="card-list">
-                <li class="card">
-                    <h4>Gwent Electron</h4>
-                    <p>Playable desktop (x64) expansion of a browser remake of the Witcher 3 Gwent minigame, fork of 3.1 with more assets and better AI.</p>
-                    <div class="icon-row">
-                        <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/camerensmith/gwent-electron','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-                        </button>
-                        <button class="icon-button" type="button" aria-label="Download from itch.io" onclick="window.open('https://camsmith.itch.io/gwent-portable-classic','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M5 20h14v-2H5v2z"></path>
-                                <path d="M7 9l5 5 5-5h-3V4h-4v5H7z"></path>
-                            </svg>
-                        </button>
-                        <button class="icon-button" type="button" aria-label="Play Gwent Electron" onclick="window.open('https://camerensmith.github.io/gwent-electron/','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
-                        </button>
+                <li class="flip-card gwent-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"></div>
+                        <div class="flip-card-back">
+                            <h4>Gwent Electron</h4>
+                            <p>Playable desktop (x64) expansion of a browser remake of the Witcher 3 Gwent minigame, fork of 3.1 with more assets and better AI.</p>
+                            <div class="icon-row">
+                                <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/camerensmith/gwent-electron','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                                </button>
+                                <button class="icon-button" type="button" aria-label="Download from itch.io" onclick="window.open('https://camsmith.itch.io/gwent-portable-classic','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 20h14v-2H5v2z"></path>
+                                        <path d="M7 9l5 5 5-5h-3V4h-4v5H7z"></path>
+                                    </svg>
+                                </button>
+                                <button class="icon-button" type="button" aria-label="Play Gwent Electron" onclick="window.open('https://camerensmith.github.io/gwent-electron/','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </li>
-                <li class="card">
-                    <h4>OWTacticards</h4>
-                    <p>Complete overhaul of the original digitisation. Now with AI decision making, new cards, sounds, modal choices, unique abilities, and more. Credit to Nathan Miles and barberian for initial iterations.</p>
-                    <div class="icon-row">
-                        <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/camerensmith/owtacticards','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-                        </button>
-                        <button class="icon-button" type="button" aria-label="Play OWTacticards" onclick="window.open('https://camerensmith.github.io/owtacticards/','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
-                        </button>
+                <li class="flip-card owtacticards-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"></div>
+                        <div class="flip-card-back">
+                            <h4>OWTacticards</h4>
+                            <p>Complete overhaul of the original digitisation. Now with AI decision making, new cards, sounds, modal choices, unique abilities, and more. Credit to Nathan Miles and barberian for initial iterations.</p>
+                            <div class="icon-row">
+                                <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/camerensmith/owtacticards','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                                </button>
+                                <button class="icon-button" type="button" aria-label="Play OWTacticards" onclick="window.open('https://camerensmith.github.io/owtacticards/','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </li>
-                <li class="card">
-                    <h4>ProjectLookbook (Mobile Alpha Demo)</h4>
-                    <p>Mobile-first closet organizer with background removal, outfit builder, and Firebase sync. Full authentication and offline support.</p>
-                    <div class="icon-row">
-                        <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/camerensmith/LookBook','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-                        </button>
-                        <button class="icon-button" type="button" aria-label="Open app" onclick="window.open('https://project-lookbook.web.app/','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
-                        </button>
+                <li class="flip-card lookbook-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"></div>
+                        <div class="flip-card-back">
+                            <img src="assets/lookbook.png" alt="LookBook" style="width: 100%; max-width: 200px; height: auto; display: block; margin: 0 auto;" />
+                            <p>Mobile-first closet organizer with background removal, outfit builder, and Firebase sync. Full authentication and offline support.</p>
+                            <div class="icon-row">
+                                <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/camerensmith/LookBook','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                                </button>
+                                <button class="icon-button" type="button" aria-label="Open app" onclick="window.open('https://project-lookbook.web.app/','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </li>
-                <li class="card">
-                    <h4>Search Builder</h4>
-                    <p>Helps myself and other jobseekers search for their dream job smarter, all in one place, with only a few clicks. No frills.</p>
-                    <div class="icon-row">
-                        <button class="icon-button" type="button" aria-label="Open Search Builder" onclick="window.open('https://camerensmith.github.io/searchbuilder/','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
-                        </button>
+                <li class="flip-card searchbuilder-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"></div>
+                        <div class="flip-card-back">
+                            <h4>Search Builder</h4>
+                            <p>Helps myself and other jobseekers search for their dream job smarter, all in one place, with only a few clicks. No frills.</p>
+                            <div class="icon-row">
+                                <button class="icon-button" type="button" aria-label="Open Search Builder" onclick="window.open('https://camerensmith.github.io/searchbuilder/','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </li>
-                <li class="card">
-                    <h4>OpenEco Project</h4>
-                    <p>100% volunteer-run, central database to emphasize truth in reporting for corporate climate initiatives.</p>
-                    <div class="icon-row">
-                        <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/Open-Eco','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-                        </button>
-                        <button class="icon-button" type="button" aria-label="Visit website" onclick="window.open('https://www.open-eco.org/','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
-                        </button>
+                <li class="flip-card openeco-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"></div>
+                        <div class="flip-card-back">
+                            <img src="assets/wordmark.png" alt="OpenEco" style="width: 100%; max-width: 200px; height: auto; display: block; margin: 0 auto;" />
+                            <p>100% volunteer-run, central database to emphasize truth in reporting for corporate climate initiatives.</p>
+                            <div class="icon-row">
+                                <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/Open-Eco','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                                </button>
+                                <button class="icon-button" type="button" aria-label="Visit website" onclick="window.open('https://www.open-eco.org/','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </li>
-                <li class="card">
-                    <h4>Quartz</h4>
-                    <p>Cross-platform desktop application for managing personal databases. Features collections management, spreadsheet-like table view, customizable forms, full-text search, and a plugin system.</p>
-                    <div class="icon-row">
-                        <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/camerensmith/quartz','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-                        </button>
-                        <button class="icon-button" type="button" aria-label="Download release" onclick="window.open('https://github.com/camerensmith/quartz/releases/tag/release-ready','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M5 20h14v-2H5v2z"></path>
-                                <path d="M7 9l5 5 5-5h-3V4h-4v5H7z"></path>
-                            </svg>
-                        </button>
+                <li class="flip-card quartz-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"></div>
+                        <div class="flip-card-back">
+                            <h4>Quartz</h4>
+                            <p>Cross-platform desktop application for managing personal databases. Features collections management, spreadsheet-like table view, customizable forms, full-text search, and a plugin system.</p>
+                            <div class="icon-row">
+                                <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/camerensmith/quartz','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                                </button>
+                                <button class="icon-button" type="button" aria-label="Download release" onclick="window.open('https://github.com/camerensmith/quartz/releases/tag/release-ready','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 20h14v-2H5v2z"></path>
+                                        <path d="M7 9l5 5 5-5h-3V4h-4v5H7z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </li>
-                <li class="card">
-                    <h4>SuperMauLTD (Alpha)</h4>
-                    <p>Experimental TD project based on old WC3 maps. Built from the ground up in Python with highly modular json files. This game is unfinished. You will encounter bugs, unintuitive UI, non functional issues.</p>
-                    <div class="icon-row">
-                        <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/camerensmith/supermaultd','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-                        </button>
-                        <button class="icon-button" type="button" aria-label="Download from itch.io" onclick="window.open('https://camsmith.itch.io/supermaul-td','_blank','noopener')">
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M5 20h14v-2H5v2z"></path>
-                                <path d="M7 9l5 5 5-5h-3V4h-4v5H7z"></path>
-                            </svg>
-                        </button>
+                <li class="flip-card chowder-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"></div>
+                        <div class="flip-card-back">
+                            <h4>Chowder (Beta)</h4>
+                            <p>A personal food and restaurant tracking app with a map-centric UI. Track your favorite restaurants, dishes, and visits—all stored locally on your device. Offline-first with share codes and visit tracking.</p>
+                            <div class="icon-row">
+                                <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/camerensmith/chowder','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                                </button>
+                                <button class="icon-button" type="button" aria-label="Visit website" onclick="window.open('https://camerensmith.github.io/chowder/','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="flip-card supermaultd-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front"></div>
+                        <div class="flip-card-back">
+                            <h4>SuperMauLTD</h4>
+                            <p>Experimental TD project based on old WC3 maps. Built from the ground up in Python with highly modular json files. This game is unfinished. You will encounter bugs, unintuitive UI, non functional issues.</p>
+                            <div class="icon-row">
+                                <button class="icon-button" type="button" aria-label="View on GitHub" onclick="window.open('https://github.com/camerensmith/supermaultd','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                                </button>
+                                <button class="icon-button" type="button" aria-label="Download from itch.io" onclick="window.open('https://camsmith.itch.io/supermaul-td','_blank','noopener')">
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 20h14v-2H5v2z"></path>
+                                        <path d="M7 9l5 5 5-5h-3V4h-4v5H7z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -164,23 +216,27 @@
             <h3>Design</h3>
             <p>I've created and helped create Figma mockups and UI systems.</p>
             <ul class="card-list">
-                <li class="card">
+                <!-- <li class="card">
                     <h4>Figma Mockups</h4>
+                    <p style="color: #ff8c42; font-weight: 600; margin: 0;">STUDS Figma</p>
                     <p>Product/UI flows and component libraries supporting engineering handoff.</p>
                     <split-button label="View" figma-href="https://www.figma.com/design/DVLrUs7pMXvMZGsrDTOro1/designsystem?node-id=180-29038&t=glLpuCsF9yJRLF4S-0" handoff-href="https://platform-roles-permissions-studs-tailwind.vercel.app/users"></split-button>
-                </li>
+                </li> -->
                 <li class="card">
                     <h4>Prisonology Mockups</h4>
+                    <p style="color: #cc5500; font-weight: bold; margin: 0; font-size: 1.5rem;">Prisonology</p>
                     <p>UI/UX design mockups for the Prisonology Study project.</p>
                     <a class="button" href="https://www.figma.com/make/s8yi3pIo7lnwAiOofAkj6K/Prisonology-Study?p=f&t=aXHs6clnPrCsXkoa-0" target="_blank" rel="noreferrer noopener">View in Figma</a>
                 </li>
                 <li class="card">
-                    <h4>STUDS Quick Start</h4>
+                    <h4>STUDS</h4>
+                    <img src="assets/studs.png" alt="STUDS" style="max-height: 120px; width: auto; display: block; margin: 0.5rem 0;" />
                     <p>Design system quick start—patterns, components, and integration guides.</p>
                     <a class="button" href="https://design.strongtie.io/" target="_blank" rel="noreferrer noopener">View Quick Start</a>
                 </li>
                 <li class="card">
                     <h4>EcoKit</h4>
+                    <img src="assets/ecokit.png" alt="EcoKit" style="max-height: 120px; width: auto; display: block; margin: 0.5rem 0;" />
                     <p>UI Guidelines for the OpenEco Project. A comprehensive design system with components, tokens, and guidelines for building beautiful, accessible, and consistent user interfaces.</p>
                     <a class="button" href="https://open-eco.github.io/oe-core/" target="_blank" rel="noreferrer noopener">View EcoKit</a>
                 </li>
@@ -289,7 +345,10 @@
 
         <section id="about" class="section">
             <h3>About</h3>
-            <p>Just a lifelong learner and hobbyist. I live in NJ, originally from the Midwest. I enjoy tinkering with modding my favorite games, writing, playing the ocarina (not good at all, surprisingly difficult). When I have free time, I am usually out with my dog and fiancee hiking around NJ!</p>
+            <div class="about-content">
+                <img src="assets/headshot.png" alt="Cameren Smith headshot" class="headshot" />
+                <p>Just a lifelong learner and hobbyist. I live in NJ, originally from the Midwest. I enjoy tinkering with modding my favorite games, writing, playing the ocarina (not good at all, surprisingly difficult). When I have free time, I am usually out with my dog and fiancee hiking around NJ!</p>
+            </div>
         </section>
 
         <section id="contact" class="section">

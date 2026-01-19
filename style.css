@@ -162,14 +162,127 @@ body {
 #resume .card { align-items: center; text-align: center; }
 
 .card-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; gap: .5rem; }
+
+/* Flip card container */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  height: 100%;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.flip-card-front {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--muted);
+  height: 100%;
+}
+
+.flip-card-back {
+  background: var(--card);
+  transform: rotateY(180deg);
+  padding: 1rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  height: 100%;
+}
+
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; gap: .5rem; justify-content: center; }
+.owtacticards-card .flip-card-front {
+  background-image: url('assets/ow.png');
+}
+.supermaultd-card .flip-card-front {
+  background-image: url('assets/supermaul.png');
+  background-color: rgba(173, 216, 230, 0.1);
+}
+.gwent-card .flip-card-front {
+  background-image: url('assets/gwent.png');
+  background-color: rgba(101, 67, 33, 0.1);
+}
+.lookbook-card .flip-card-front {
+  background-image: url('assets/lookbook.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(30, 58, 138, 0.1);
+}
+.searchbuilder-card .flip-card-front {
+  background: rgba(20, 184, 166, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbuilder-card .flip-card-front::before {
+  content: 'SB';
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--text);
+  opacity: 0.8;
+}
+.openeco-card .flip-card-front {
+  background-image: url('assets/wordmark.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  position: relative;
+}
+
+.openeco-card .flip-card-front::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #1A6F8A, #138A4F);
+  opacity: 0.15;
+  z-index: 0;
+  border-radius: 10px;
+}
+.chowder-card .flip-card-front {
+  background-image: url('assets/appicon.png');
+}
+.quartz-card .flip-card-front {
+  background-image: url('assets/quartz.png');
+}
 .card .button:last-of-type { margin-top: auto; }
-.card .icon-row { 
+.card .icon-row,
+.flip-card-back .icon-row { 
   margin-top: auto; 
   justify-content: flex-start; 
   align-self: flex-start;
 }
-.card split-button { display:block; margin-top:auto; }
+.card split-button,
+.flip-card-back split-button { display:block; margin-top:auto; }
 
 .button {
   display: inline-flex;
@@ -188,7 +301,8 @@ body {
 .button:focus { outline: 3px solid var(--focus); outline-offset: 3px; }
 
 
-.card .icon-button {
+.card .icon-button,
+.flip-card-back .icon-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -200,8 +314,10 @@ body {
   border: 1px solid var(--border);
   color: var(--text);
 }
-.card .icon-button:hover { background: color-mix(in hsl, var(--primary) 12%, transparent); border-color: var(--primary); }
-.card .icon { width: 14px; height: 14px; fill: currentColor; }
+.card .icon-button:hover,
+.flip-card-back .icon-button:hover { background: color-mix(in hsl, var(--primary) 12%, transparent); border-color: var(--primary); }
+.card .icon,
+.flip-card-back .icon { width: 14px; height: 14px; fill: currentColor; }
 .icon-row { display: inline-flex; gap: .25rem; align-items: center; }
 
 .site-footer { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; border-top: 1px solid var(--border); color: var(--muted); }
@@ -280,6 +396,21 @@ details summary:hover::before {
   margin: 0 0 1rem 0;
 }
 
+/* About section with headshot */
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.headshot {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--border);
+}
+
 .dark {
   /* shadcn-style color tokens (HSL components) - Dark theme */
   --background: 224 71% 4%;
@@ -327,6 +458,7 @@ details summary:hover::before {
   .app { grid-template-columns: 1fr; }
   .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); display: none; }
   .sidebar.open { display: block; }
+  .about-content { flex-direction: column; align-items: center; }
   
   /* Mobile topbar adjustments */
   .topbar .brand-title { display: none; }

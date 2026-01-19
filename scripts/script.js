@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function runSearch() {
     const status = document.getElementById('searchStatus');
     const q = (search?.value || '').trim().toLowerCase();
-    const cards = Array.from(document.querySelectorAll('.card'));
+    const cards = Array.from(document.querySelectorAll('.flip-card, .card'));
     let visible = 0;
     cards.forEach(card => {
       const text = card.textContent.toLowerCase();
@@ -213,6 +213,57 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Flip card tap/click functionality for mobile and uniform height
+  const flipCards = document.querySelectorAll('.flip-card');
+  let maxHeight = 0;
+  
+  // First pass: measure all card heights
+  flipCards.forEach(card => {
+    const back = card.querySelector('.flip-card-back');
+    if (back) {
+      // Temporarily make back visible and relative to measure its natural height
+      back.style.position = 'relative';
+      back.style.visibility = 'visible';
+      back.style.transform = 'none';
+      
+      // Measure the natural height
+      const height = back.offsetHeight;
+      if (height > maxHeight) {
+        maxHeight = height;
+      }
+      
+      // Restore back to absolute positioning
+      back.style.position = 'absolute';
+      back.style.transform = 'rotateY(180deg)';
+      back.style.visibility = 'visible';
+    }
+  });
+  
+  // Second pass: apply uniform height to all cards
+  flipCards.forEach(card => {
+    const back = card.querySelector('.flip-card-back');
+    const inner = card.querySelector('.flip-card-inner');
+    const front = card.querySelector('.flip-card-front');
+    
+    if (back && inner && maxHeight > 0) {
+      // Set height on inner container
+      inner.style.height = maxHeight + 'px';
+      // Both front and back will be 100% of inner height
+      if (front) {
+        front.style.height = '100%';
+      }
+      back.style.height = '100%';
+    }
+    
+    card.addEventListener('click', (e) => {
+      // Don't flip if clicking on a button or link inside the card
+      if (e.target.closest('button, a')) {
+        return;
+      }
+      card.classList.toggle('flipped');
+    });
+  });
 });
 
 
