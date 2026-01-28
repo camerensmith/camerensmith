@@ -397,6 +397,147 @@ details summary:hover::before {
   margin: 0 0 1rem 0;
 }
 
+/* Web Design Samples Slider Section */
+#web-design-samples {
+  max-width: none;
+  padding: 2rem 1rem;
+  margin: 0;
+  width: 100%;
+}
+
+.before-after-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+.before-after-item {
+  width: 100%;
+}
+
+.before-after-item h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  padding: 0;
+}
+
+.before-after-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.before-after-slider:active {
+  cursor: grabbing;
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.slider-after {
+  display: block;
+}
+
+.slider-before-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+  cursor: ew-resize;
+  margin-left: -2px; /* Center the 4px handle */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-handle-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: var(--primary);
+  transform: translateX(-50%);
+}
+
+.slider-handle-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: var(--card);
+  border: 3px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: var(--primary);
+}
+
+.slider-handle-circle svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.slider-handle-circle svg:first-child {
+  margin-right: -4px;
+}
+
+.slider-handle-circle svg:last-child {
+  margin-left: -4px;
+}
+
+.slider-handle:hover .slider-handle-circle {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.slider-handle:active .slider-handle-circle {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
 /* About section with headshot */
 .about-content {
   display: flex;
@@ -487,6 +628,15 @@ details summary:hover::before {
   .topbar .topbar-inner {
     grid-template-columns: 1fr;
     padding: .5rem 1rem;
+  }
+
+  /* Web Design Samples Slider Mobile */
+  #web-design-samples {
+    padding: 2rem 1rem;
+  }
+
+  .before-after-item h4 {
+    padding: 0;
   }
 }
 

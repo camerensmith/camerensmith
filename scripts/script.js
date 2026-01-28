@@ -214,6 +214,126 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Before/After Image Sliders
+  const sliders = document.querySelectorAll('.before-after-slider');
+  sliders.forEach(slider => {
+    const wrapper = slider.querySelector('.slider-wrapper');
+    const handle = slider.querySelector('.slider-handle');
+    const beforeWrapper = slider.querySelector('.slider-before-wrapper');
+    const beforeImage = slider.querySelector('.slider-before');
+    const afterImage = slider.querySelector('.slider-after');
+    let isDragging = false;
+    let startX = 0;
+    let startLeft = 0;
+
+    // Sync dimensions when images load - ensure before image matches after image exactly
+    function syncDimensions() {
+      if (beforeImage && afterImage && beforeImage.complete && afterImage.complete) {
+        const afterWidth = afterImage.offsetWidth;
+        const afterHeight = afterImage.offsetHeight;
+        beforeWrapper.style.height = `${afterHeight}px`;
+        // Set before image to exact same dimensions as after image
+        // Position it so left edge aligns with wrapper's left edge
+        beforeImage.style.width = `${afterWidth}px`;
+        beforeImage.style.height = `${afterHeight}px`;
+        beforeImage.style.left = '0';
+        beforeImage.style.right = 'auto';
+        beforeImage.style.maxWidth = 'none';
+        beforeImage.style.minWidth = 'none';
+      }
+    }
+
+    // Wait for images to load
+    if (beforeImage.complete && afterImage.complete) {
+      syncDimensions();
+    } else {
+      beforeImage.addEventListener('load', syncDimensions);
+      afterImage.addEventListener('load', syncDimensions);
+    }
+
+    // Also sync on window resize
+    window.addEventListener('resize', syncDimensions);
+
+    function setSliderPosition(percent) {
+      // Clamp between 0 and 100
+      percent = Math.max(0, Math.min(100, percent));
+      
+      // Handle position: 0% = left edge, 100% = right edge
+      handle.style.left = `${percent}%`;
+      
+      // Before wrapper: positioned from LEFT edge (left: 0)
+      // Width represents how much of the left side (BEFORE) is visible
+      // 0% = no before visible (all after), 100% = all before visible
+      beforeWrapper.style.width = `${percent}%`;
+    }
+
+    function updateSlider(x) {
+      const rect = wrapper.getBoundingClientRect();
+      const percent = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
+      setSliderPosition(percent);
+    }
+
+    function handleStart(e) {
+      isDragging = true;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      startX = clientX;
+      startLeft = parseFloat(handle.style.left) || 50;
+      slider.style.cursor = 'grabbing';
+      e.preventDefault();
+    }
+
+    function handleMove(e) {
+      if (!isDragging) return;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const rect = wrapper.getBoundingClientRect();
+      const deltaX = clientX - startX;
+      const deltaPercent = (deltaX / rect.width) * 100;
+      const newPercent = Math.max(0, Math.min(100, startLeft + deltaPercent));
+      setSliderPosition(newPercent);
+      e.preventDefault();
+    }
+
+    function handleEnd() {
+      isDragging = false;
+      slider.style.cursor = 'grab';
+    }
+
+    // Mouse events
+    handle.addEventListener('mousedown', handleStart);
+    slider.addEventListener('mousedown', (e) => {
+      // Don't handle if clicking on the handle itself
+      if (e.target === handle || e.target.closest('.slider-handle')) {
+        return;
+      }
+      if (e.target === slider || e.target === wrapper || e.target === beforeImage) {
+        updateSlider(e.clientX);
+        handleStart(e);
+      }
+    });
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('mouseup', handleEnd);
+
+    // Touch events
+    handle.addEventListener('touchstart', handleStart, { passive: false });
+    slider.addEventListener('touchstart', (e) => {
+      // Don't handle if touching the handle itself
+      if (e.target === handle || e.target.closest('.slider-handle')) {
+        return;
+      }
+      if (e.target === slider || e.target === wrapper || e.target === beforeImage) {
+        const touch = e.touches[0];
+        updateSlider(touch.clientX);
+        handleStart(e);
+      }
+    }, { passive: false });
+    document.addEventListener('touchmove', handleMove, { passive: false });
+    document.addEventListener('touchend', handleEnd);
+
+    // Initialize slider at 50% (before on left, after on right)
+    handle.style.left = '50%';
+    beforeWrapper.style.width = '50%';
+  });
+
   // Flip card tap/click functionality for mobile and uniform height
   const flipCards = document.querySelectorAll('.flip-card');
   let maxHeight = 0;
