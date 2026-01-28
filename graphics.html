@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphics - Cameren Smith</title>
+    <meta name="description" content="Graphic design work by Cameren Smith">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
+    <link rel="shortcut icon" href="assets/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header topbar" role="banner">
+        <div class="topbar-inner">
+            <div class="brand-left">
+                <a href="index.html" class="home-link" aria-label="Home">
+                    <img src="assets/home.png" alt="Home" class="home-icon" />
+                </a>
+                <span class="brand-title">Cam Smith's Portfolio</span>
+            </div>
+            <div class="utilities">
+                <button id="themeToggle" class="button" type="button" aria-pressed="false" aria-label="Toggle color theme">Theme</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="app">
+        <main id="main" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; padding-top: calc(var(--topbar-height) + 2rem);">
+            <a href="index.html" class="button" style="margin-bottom: 2rem; display: inline-block;">← Back to Main</a>
+            
+            <section class="section" style="border-top: none;">
+                <h2>Graphics</h2>
+                <p>A snippet of graphic designs...more to come!</p>
+                
+                <div class="graphics-grid">
+                    <div class="graphics-item">
+                        <img src="assets/m2d.png" alt="Mothers to Daughters" />
+                    </div>
+                    <div class="graphics-item">
+                        <img src="assets/32.png" alt="32" />
+                    </div>
+                    <div class="graphics-item">
+                        <img src="assets/OnTime.png" alt="OnTime" />
+                    </div>
+                    <div class="graphics-item">
+                        <img src="assets/studs.png" alt="STUDS" />
+                    </div>
+                    <div class="graphics-item">
+                        <img src="assets/appicon.png" alt="App Icon" />
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Cameren Smith</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
