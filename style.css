@@ -1,22 +1,22 @@
 :root {
-  /* Modern neutral color palette inspired by reference design */
-  --background: 0 0% 98%;
-  --foreground: 0 0% 15%;
+  /* shadcn light tokens (default) */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
   --card-h: 0 0% 100%;
-  --card-foreground: 0 0% 15%;
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 45%;
+  --card-foreground: 222 47% 11%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215 16% 47%;
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 15%;
-  --border-h: 0 0% 90%;
-  --input: 0 0% 90%;
-  --primary-h: 0 0% 20%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 0 0% 96%;
-  --secondary-foreground: 0 0% 15%;
-  --accent: 0 0% 94%;
-  --accent-foreground: 0 0% 15%;
-  --ring: 0 0% 25%;
+  --popover-foreground: 222 47% 11%;
+  --border-h: 214 32% 91%;
+  --input: 214 32% 91%;
+  --primary-h: 0 6% 25%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222 47% 11%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222 47% 11%;
+  --ring: 0 3% 25%; /* #433F3F */
   --radius: 0.5rem;
   --topbar-height: 64px;
 
@@ -135,7 +135,7 @@ body {
 }
 .sidebar ul { list-style: none; padding: 0; margin: 0; }
 .sidebar a { 
-  color: hsl(var(--muted-foreground)); 
+  color: var(--text); 
   text-decoration: none; 
   display: block; 
   padding: .6rem 0; 
@@ -143,8 +143,8 @@ body {
   font-weight: 500;
   transition: color 0.2s ease;
 }
-.sidebar a:hover { color: var(--text); }
-.sidebar a.active { color: var(--text); font-weight: 600; }
+.sidebar a:hover { color: var(--primary); }
+.sidebar a.active { color: var(--primary); font-weight: 600; }
 
 .site-header h1 { margin: 0 0 .25rem 0; font-size: 2rem; }
 .site-header p { margin: 0 0 1rem 0; color: var(--muted); }
@@ -633,24 +633,25 @@ details summary:hover::before {
 }
 
 .dark {
-  /* Modern dark theme with softer contrasts */
-  --background: 0 0% 8%;
-  --foreground: 0 0% 95%;
-  --card-h: 0 0% 10%;
-  --card-foreground: 0 0% 95%;
-  --muted: 0 0% 25%;
-  --muted-foreground: 0 0% 60%;
-  --popover: 0 0% 10%;
-  --popover-foreground: 0 0% 95%;
-  --border-h: 0 0% 18%;
-  --input: 0 0% 18%;
-  --primary-h: 0 0% 75%;
-  --primary-foreground: 0 0% 10%;
-  --secondary: 0 0% 18%;
-  --secondary-foreground: 0 0% 95%;
-  --accent: 0 0% 20%;
-  --accent-foreground: 0 0% 95%;
-  --ring: 0 0% 30%;
+  /* shadcn-style color tokens (HSL components) - Dark theme */
+  --background: 224 71% 4%;
+  --foreground: 213 31% 91%;
+  --card-h: 224 71% 4%;
+  --card-foreground: 213 31% 91%;
+  --muted: 215 16% 47%;
+  --muted-foreground: 217 14% 65%;
+  --popover: 224 71% 4%;
+  --popover-foreground: 213 31% 91%;
+  --border-h: 215 27% 16%;
+  --input: 215 27% 16%;
+  /* Dark theme: accessible primary */
+  --primary-h: 0 6% 60%; /* #9E9494 */
+  --primary-foreground: 224 71% 4%; /* near-black for contrast on light primary */
+  --secondary: 215 27% 16%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 217 19% 27%;
+  --accent-foreground: 210 40% 98%;
+  --ring: 0 3% 25%; /* #433F3F */
 
   /* mapped legacy vars */
   --bg: hsl(var(--background));
