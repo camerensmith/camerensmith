@@ -18,7 +18,7 @@
   --accent-foreground: 222 47% 11%;
   --ring: 0 3% 25%; /* #433F3F */
   --radius: 0.5rem;
-  --topbar-height: 56px;
+  --topbar-height: 64px;
 
   /* map existing variables to shadcn tokens */
   --bg: hsl(var(--background));
@@ -38,10 +38,13 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -83,7 +86,7 @@ body {
   align-items: center;
   max-width: none;
   margin: 0;
-  padding: .75rem 1rem;
+  padding: 1rem 1.5rem;
 }
 .topbar .brand-left { display: inline-flex; align-items: center; gap: .5rem; }
 .topbar .home-link { display: inline-flex; align-items: center; justify-content: center; }
@@ -124,13 +127,22 @@ body {
 }
 .sidebar {
   border-right: 1px solid var(--border);
-  padding: 1rem;
+  padding: 2rem 1.5rem;
   position: sticky;
   top: var(--topbar-height); /* below topbar */
   height: calc(100vh - var(--topbar-height));
+  background: var(--card);
 }
 .sidebar ul { list-style: none; padding: 0; margin: 0; }
-.sidebar a { color: var(--text); text-decoration: none; display: block; padding: .4rem 0; }
+.sidebar a { 
+  color: var(--text); 
+  text-decoration: none; 
+  display: block; 
+  padding: .6rem 0; 
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
 .sidebar a:hover { color: var(--primary); }
 .sidebar a.active { color: var(--primary); font-weight: 600; }
 
@@ -151,12 +163,45 @@ body {
 .hero {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2rem 1rem;
-  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  border-top: none;
   text-align: center;
 }
 
-.section { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; border-top: 1px solid var(--border); }
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section { 
+  max-width: 960px; 
+  margin: 0 auto; 
+  padding: 3rem 2rem; 
+  border-top: 1px solid var(--border); 
+}
+
+.section h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.section > p {
+  color: var(--muted);
+  margin: 0 0 2rem 0;
+  font-size: 1.05rem;
+}
 
 
 #resume .card { align-items: center; text-align: center; }
@@ -191,8 +236,9 @@ body {
   left: 0;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid var(--border);
+  box-shadow: 0 1px 3px hsl(var(--foreground) / 0.05);
 }
 
 .flip-card-front {
@@ -214,7 +260,22 @@ body {
   height: 100%;
 }
 
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; gap: .5rem; justify-content: center; }
+.card { 
+  background: var(--card); 
+  border: 1px solid var(--border); 
+  border-radius: 12px; 
+  padding: 1.25rem; 
+  display: flex; 
+  flex-direction: column; 
+  gap: .5rem; 
+  justify-content: center; 
+  box-shadow: 0 1px 3px hsl(var(--foreground) / 0.05);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px hsl(var(--foreground) / 0.08);
+}
 #design .card { justify-content: flex-end; padding-bottom: 1.25rem; }
 .owtacticards-card .flip-card-front {
   background-image: url('assets/ow.png');
@@ -292,13 +353,23 @@ body {
   text-align: center;
   background: var(--primary);
   color: hsl(var(--primary-foreground));
-  padding: .5rem .9rem;
+  padding: .625rem 1.125rem;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
 }
-.button:hover { filter: brightness(1.06); }
+.button:hover { 
+  background: hsl(var(--primary-h) / 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px hsl(var(--foreground) / 0.15);
+}
+.button:active {
+  transform: translateY(0);
+}
 .button:focus { outline: 3px solid var(--focus); outline-offset: 3px; }
 
 
@@ -321,7 +392,15 @@ body {
 .flip-card-back .icon { width: 14px; height: 14px; fill: currentColor; }
 .icon-row { display: inline-flex; gap: .25rem; align-items: center; }
 
-.site-footer { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; border-top: 1px solid var(--border); color: var(--muted); }
+.site-footer { 
+  max-width: 960px; 
+  margin: 0 auto; 
+  padding: 3rem 2rem; 
+  border-top: 1px solid var(--border); 
+  color: var(--muted); 
+  font-size: 0.9rem;
+  text-align: center;
+}
 
 
 .table-responsive { overflow-x: auto; }
