@@ -1,24 +1,24 @@
 :root {
-  /* shadcn light tokens (default) */
-  --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
+  /* Modern neutral color palette inspired by reference design */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 15%;
   --card-h: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215 16% 47%;
+  --card-foreground: 0 0% 15%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
   --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
-  --border-h: 214 32% 91%;
-  --input: 214 32% 91%;
-  --primary-h: 0 6% 25%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222 47% 11%;
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222 47% 11%;
-  --ring: 0 3% 25%; /* #433F3F */
+  --popover-foreground: 0 0% 15%;
+  --border-h: 0 0% 90%;
+  --input: 0 0% 90%;
+  --primary-h: 0 0% 20%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 15%;
+  --accent: 0 0% 94%;
+  --accent-foreground: 0 0% 15%;
+  --ring: 0 0% 25%;
   --radius: 0.5rem;
-  --topbar-height: 56px;
+  --topbar-height: 64px;
 
   /* map existing variables to shadcn tokens */
   --bg: hsl(var(--background));
@@ -38,10 +38,13 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -83,7 +86,7 @@ body {
   align-items: center;
   max-width: none;
   margin: 0;
-  padding: .75rem 1rem;
+  padding: 1rem 1.5rem;
 }
 .topbar .brand-left { display: inline-flex; align-items: center; gap: .5rem; }
 .topbar .home-link { display: inline-flex; align-items: center; justify-content: center; }
@@ -124,15 +127,24 @@ body {
 }
 .sidebar {
   border-right: 1px solid var(--border);
-  padding: 1rem;
+  padding: 2rem 1.5rem;
   position: sticky;
   top: var(--topbar-height); /* below topbar */
   height: calc(100vh - var(--topbar-height));
+  background: var(--card);
 }
 .sidebar ul { list-style: none; padding: 0; margin: 0; }
-.sidebar a { color: var(--text); text-decoration: none; display: block; padding: .4rem 0; }
-.sidebar a:hover { color: var(--primary); }
-.sidebar a.active { color: var(--primary); font-weight: 600; }
+.sidebar a { 
+  color: var(--muted); 
+  text-decoration: none; 
+  display: block; 
+  padding: .6rem 0; 
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.sidebar a:hover { color: var(--text); }
+.sidebar a.active { color: var(--text); font-weight: 600; }
 
 .site-header h1 { margin: 0 0 .25rem 0; font-size: 2rem; }
 .site-header p { margin: 0 0 1rem 0; color: var(--muted); }
@@ -151,12 +163,45 @@ body {
 .hero {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2rem 1rem;
-  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  border-top: none;
   text-align: center;
 }
 
-.section { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; border-top: 1px solid var(--border); }
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section { 
+  max-width: 960px; 
+  margin: 0 auto; 
+  padding: 3rem 2rem; 
+  border-top: 1px solid var(--border); 
+}
+
+.section h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.section > p {
+  color: var(--muted);
+  margin: 0 0 2rem 0;
+  font-size: 1.05rem;
+}
 
 
 #resume .card { align-items: center; text-align: center; }
@@ -191,8 +236,9 @@ body {
   left: 0;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .flip-card-front {
@@ -214,7 +260,22 @@ body {
   height: 100%;
 }
 
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; gap: .5rem; justify-content: center; }
+.card { 
+  background: var(--card); 
+  border: 1px solid var(--border); 
+  border-radius: 12px; 
+  padding: 1.25rem; 
+  display: flex; 
+  flex-direction: column; 
+  gap: .5rem; 
+  justify-content: center; 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 #design .card { justify-content: flex-end; padding-bottom: 1.25rem; }
 .owtacticards-card .flip-card-front {
   background-image: url('assets/ow.png');
@@ -292,13 +353,23 @@ body {
   text-align: center;
   background: var(--primary);
   color: hsl(var(--primary-foreground));
-  padding: .5rem .9rem;
+  padding: .625rem 1.125rem;
   border-radius: 8px;
   border: none;
   cursor: pointer;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
 }
-.button:hover { filter: brightness(1.06); }
+.button:hover { 
+  background: hsl(var(--primary-h) / 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.button:active {
+  transform: translateY(0);
+}
 .button:focus { outline: 3px solid var(--focus); outline-offset: 3px; }
 
 
@@ -321,7 +392,15 @@ body {
 .flip-card-back .icon { width: 14px; height: 14px; fill: currentColor; }
 .icon-row { display: inline-flex; gap: .25rem; align-items: center; }
 
-.site-footer { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; border-top: 1px solid var(--border); color: var(--muted); }
+.site-footer { 
+  max-width: 960px; 
+  margin: 0 auto; 
+  padding: 3rem 2rem; 
+  border-top: 1px solid var(--border); 
+  color: var(--muted); 
+  font-size: 0.9rem;
+  text-align: center;
+}
 
 
 .table-responsive { overflow-x: auto; }
@@ -554,25 +633,24 @@ details summary:hover::before {
 }
 
 .dark {
-  /* shadcn-style color tokens (HSL components) - Dark theme */
-  --background: 224 71% 4%;
-  --foreground: 213 31% 91%;
-  --card-h: 224 71% 4%;
-  --card-foreground: 213 31% 91%;
-  --muted: 215 16% 47%;
-  --muted-foreground: 217 14% 65%;
-  --popover: 224 71% 4%;
-  --popover-foreground: 213 31% 91%;
-  --border-h: 215 27% 16%;
-  --input: 215 27% 16%;
-  /* Dark theme: accessible primary */
-  --primary-h: 0 6% 60%; /* #9E9494 */
-  --primary-foreground: 224 71% 4%; /* near-black for contrast on light primary */
-  --secondary: 215 27% 16%;
-  --secondary-foreground: 210 40% 98%;
-  --accent: 217 19% 27%;
-  --accent-foreground: 210 40% 98%;
-  --ring: 0 3% 25%; /* #433F3F */
+  /* Modern dark theme with softer contrasts */
+  --background: 0 0% 8%;
+  --foreground: 0 0% 95%;
+  --card-h: 0 0% 10%;
+  --card-foreground: 0 0% 95%;
+  --muted: 0 0% 25%;
+  --muted-foreground: 0 0% 60%;
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 95%;
+  --border-h: 0 0% 18%;
+  --input: 0 0% 18%;
+  --primary-h: 0 0% 75%;
+  --primary-foreground: 0 0% 10%;
+  --secondary: 0 0% 18%;
+  --secondary-foreground: 0 0% 95%;
+  --accent: 0 0% 20%;
+  --accent-foreground: 0 0% 95%;
+  --ring: 0 0% 30%;
 
   /* mapped legacy vars */
   --bg: hsl(var(--background));
