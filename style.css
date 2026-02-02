@@ -135,7 +135,7 @@ body {
 }
 .sidebar ul { list-style: none; padding: 0; margin: 0; }
 .sidebar a { 
-  color: var(--muted); 
+  color: hsl(var(--muted-foreground)); 
   text-decoration: none; 
   display: block; 
   padding: .6rem 0; 
@@ -238,7 +238,7 @@ body {
   backface-visibility: hidden;
   border-radius: 12px;
   border: 1px solid var(--border);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px hsl(var(--foreground) / 0.05);
 }
 
 .flip-card-front {
@@ -269,12 +269,12 @@ body {
   flex-direction: column; 
   gap: .5rem; 
   justify-content: center; 
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px hsl(var(--foreground) / 0.05);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px hsl(var(--foreground) / 0.08);
 }
 #design .card { justify-content: flex-end; padding-bottom: 1.25rem; }
 .owtacticards-card .flip-card-front {
@@ -365,7 +365,7 @@ body {
 .button:hover { 
   background: hsl(var(--primary-h) / 0.9);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px hsl(var(--foreground) / 0.15);
 }
 .button:active {
   transform: translateY(0);
