@@ -114,6 +114,18 @@ body {
   border-bottom: 1px solid rgba(139, 92, 246, 0.18);
   box-shadow: 0 1px 24px rgba(124, 58, 237, 0.07);
 }
+
+/* Signature rainbow stripe at very top */
+.topbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--purple-600) 0%, var(--purple-400) 38%, var(--lime-500) 68%, var(--lime-300) 100%);
+  z-index: 1;
+}
 .topbar, .topbar a { color: var(--text); }
 .topbar .topbar-inner {
   display: grid;
@@ -188,6 +200,16 @@ body {
   backdrop-filter: blur(8px);
   overflow-y: auto;
 }
+
+/* Gradient bar at top of sidebar content */
+.sidebar::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: var(--grad-primary);
+  border-radius: 999px;
+  margin-bottom: 2rem;
+}
 .sidebar ul { list-style: none; padding: 0; margin: 0; }
 .sidebar a {
   color: var(--text);
@@ -240,52 +262,91 @@ body {
 
 /* ── Hero ── */
 .hero {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 5rem 2.5rem 4rem;
+  max-width: none;
+  margin: 0;
+  padding: 7rem 2.5rem 9rem;
   border-top: none;
   text-align: center;
   position: relative;
+  overflow: hidden;
+  /* Deep purple-to-dark-lime gradient banner */
+  background:
+    radial-gradient(ellipse 110% 80% at 25% 55%, rgba(109, 40, 217, 0.5) 0%, transparent 55%),
+    radial-gradient(ellipse 75% 65% at 78% 18%, rgba(101, 163, 13, 0.22) 0%, transparent 50%),
+    linear-gradient(158deg, #1e0a3c 0%, #2d1172 50%, #172908 100%);
+  color: white;
 }
 
+/* Dot grid texture */
 .hero::before {
   content: '';
   position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 400px;
-  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
   pointer-events: none;
   z-index: 0;
 }
 
+/* Fade bottom into page background */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
+  z-index: 1;
+}
+
 .hero h2 {
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-size: clamp(3rem, 7vw, 5rem);
   font-weight: 800;
   margin: 0 0 1.25rem 0;
   letter-spacing: -0.03em;
   line-height: 1.15;
-  background: var(--grad-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* White text on dark hero */
+  color: white;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: white;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+}
+
+/* Lime eyebrow label above heading */
+.hero h2::before {
+  content: '✦ Portfolio';
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lime-400);
+  -webkit-text-fill-color: var(--lime-400);
+  background: none;
+  margin-bottom: 1.25rem;
 }
 
 .hero p {
   font-size: 1.125rem;
-  color: var(--muted);
-  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.85;
   max-width: 680px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* ── Sections ── */
+/* First section after hero needs no extra border since hero fades into bg */
+.hero + .section {
+  border-top: none;
+}
+
 .section {
   max-width: 960px;
   margin: 0 auto;
@@ -300,6 +361,21 @@ body {
   letter-spacing: -0.02em;
   position: relative;
   display: inline-block;
+  padding-left: 1.1rem;
+}
+
+/* Lime dot accent before each section heading */
+.section h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-55%);
+  width: 7px;
+  height: 7px;
+  background: var(--lime-500);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--lime-400);
 }
 
 .section h3::after {
@@ -362,7 +438,7 @@ body {
   backface-visibility: hidden;
   border-radius: 16px;
   border: 1px solid rgba(139, 92, 246, 0.18);
-  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.06);
+  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.06), inset 0 3px 0 var(--lime-600);
   transition: box-shadow 0.3s;
 }
 
@@ -396,7 +472,7 @@ body {
   flex-direction: column;
   gap: .5rem;
   justify-content: center;
-  box-shadow: 0 2px 16px rgba(124, 58, 237, 0.06);
+  box-shadow: 0 2px 16px rgba(124, 58, 237, 0.06), inset 0 3px 0 var(--lime-500);
   transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s;
   position: relative;
   overflow: hidden;
@@ -418,7 +494,7 @@ body {
 }
 
 .card:hover {
-  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.13), 0 2px 8px rgba(101, 163, 13, 0.08);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.13), 0 2px 8px rgba(101, 163, 13, 0.08), inset 0 3px 0 var(--lime-400);
   transform: translateY(-3px);
 }
 .card:hover::before { opacity: 1; }
@@ -850,12 +926,25 @@ details summary:hover::before { color: var(--purple-500); }
   border-bottom-color: rgba(139, 92, 246, 0.25);
 }
 
+/* Dark mode hero uses deeper tones */
+.dark .hero {
+  background:
+    radial-gradient(ellipse 110% 80% at 25% 55%, rgba(124, 58, 237, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 75% 65% at 78% 18%, rgba(132, 204, 22, 0.12) 0%, transparent 50%),
+    linear-gradient(158deg, #0d0717 0%, #1e0a3c 50%, #0f1c03 100%);
+}
+
 .dark .sidebar {
   background: rgba(21, 11, 46, 0.6);
 }
 
 .dark .card {
   background: rgba(21, 11, 46, 0.7);
+  box-shadow: 0 2px 16px rgba(124, 58, 237, 0.12), inset 0 3px 0 var(--lime-600);
+}
+
+.dark .card:hover {
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.22), 0 2px 8px rgba(132, 204, 22, 0.1), inset 0 3px 0 var(--lime-500);
 }
 
 .dark .flip-card-back {
