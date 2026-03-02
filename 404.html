@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Cameren Smith</title>
+    <meta name="description" content="Page not found">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <script>
+        var countdown = 5;
+        function updateCountdown() {
+            var el = document.getElementById('countdown');
+            if (el) el.textContent = countdown;
+            if (countdown <= 0) {
+                window.location.href = 'index.html';
+            } else {
+                countdown--;
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', updateCountdown);
+    </script>
+</head>
+<body>
+    <header class="site-header topbar" role="banner">
+        <div class="topbar-inner">
+            <div class="brand-left">
+                <a href="index.html" class="home-link" aria-label="Home">
+                    <img src="assets/home.png" alt="Home" class="home-icon" />
+                </a>
+                <span class="brand-title">Cam Smith's Portfolio</span>
+            </div>
+        </div>
+    </header>
+    <div class="app">
+        <main id="main" style="max-width: 600px; margin: 0 auto; padding: 4rem 1rem; text-align: center; padding-top: calc(var(--topbar-height) + 4rem);">
+            <h2>Page Not Found</h2>
+            <p>The page you're looking for doesn't exist. Redirecting to the home page in <span id="countdown" aria-live="polite">5</span> seconds…</p>
+            <a href="index.html" class="button" style="margin-top: 1.5rem; display: inline-block;">Go Home Now</a>
+        </main>
+    </div>
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Cameren Smith</p>
+    </footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
