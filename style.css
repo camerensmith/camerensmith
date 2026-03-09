@@ -136,6 +136,7 @@ body {
   padding: 1rem 1.5rem;
 }
 .topbar .brand-left { display: inline-flex; align-items: center; gap: .5rem; }
+#sidebarToggle { display: none; }
 .topbar .home-link { display: inline-flex; align-items: center; justify-content: center; }
 .topbar .home-icon { width: 24px; height: 24px; border-radius: 6px; }
 .topbar .brand-title {
@@ -1023,6 +1024,7 @@ details summary:hover::before { color: var(--purple-500); }
   .topbar .brand-title { display: none; }
   .topbar .search { display: none; }
   .topbar .utilities { display: none; }
+  #sidebarToggle { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: .5rem; }
   
   /* FAB theme toggle on mobile */
   .button#themeToggle {
