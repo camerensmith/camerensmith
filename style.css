@@ -554,6 +554,13 @@ body {
   z-index: 0;
   border-radius: 10px;
 }
+.houseparty-card .flip-card-front {
+  background-image: url('https://github.com/user-attachments/assets/6262f27b-df38-4877-a80c-8f4298f6d051');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
 .chowder-card .flip-card-front {
   background-image: url('assets/appicon.png');
 }
